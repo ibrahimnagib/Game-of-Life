@@ -203,11 +203,11 @@ class TestLife (TestCase):
     # -------
 
     def test_run_fredkin_1 (self):
-        v = StringIO("4\n4\n----\n-00-\n-00-\n----")
+        v = StringIO("4\n4\n-00-\n-00-\n-00-\n----")
         game = Life(v)
         game.read_board()
         game.run_fredkin(1,1)
-        self.assertEqual(game.board[1][2].status,1)
+        self.assertEqual(game.board[1][2].status,0)
 
     def test_run_fredkin_2(self):
         v = StringIO("4\n4\n----\n-00-\n-00-\n----")
@@ -217,7 +217,7 @@ class TestLife (TestCase):
         self.assertEqual(game.board[2][2].status,0)
 
     def test_run_fredkin_3(self):
-        v = StringIO("4\n4\n----\n-00-\n-00-\n----")
+        v = StringIO("4\n4\n----\n-00-\n----\n----")
         game = Life(v)
         game.read_board()
         game.run_fredkin(1,1)
