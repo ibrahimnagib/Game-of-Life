@@ -266,28 +266,28 @@ class TestLife (TestCase):
     # Life: run_conway
     # -------
 
-    def test_play_conway_1 (self):
+    def test_run_conway_1 (self):
         v = StringIO("5\n4\n....\n....\n***.\n....\n.*.*")
         game = Life(v)
         game.read_board()
         game.run_conway(1,1)
         self.assertEqual(game.board[1][2].status,0)
 
-    def test_play_conway_2(self):
+    def test_run_conway_2(self):
         v = StringIO("5\n4\n....\n....\n***.\n....\n.*.*")
         game = Life(v)
         game.read_board()
         game.run_conway(1,1)
         self.assertEqual(game.board[2][2].status,1)
 
-    def test_play_conway_3(self):
+    def test_run_conway_3(self):
         v = StringIO("5\n4\n....\n....\n***.\n....\n.*.*")
         game = Life(v)
         game.read_board()
         game.run_conway(1,1)
         self.assertEqual(game.board[0][0].status,0)
 
-    def test_play_conway_4(self):
+    def test_run_conway_4(self):
         v = StringIO("5\n4\n....\n....\n***.\n....\n.*.*")
         game = Life(v)
         game.read_board()
