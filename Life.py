@@ -127,6 +127,7 @@ class Life:
       for i in range(1, self.cols - 1):
            for j in range(1, self.rows - 1):
                status = self.board[i][j].status
+               assert type(status)==int 
                for m in range(i-1 , i +2):
                    self.board[m][j].live_neighbors += status
                for n in range(j-1 , j +2):
@@ -147,6 +148,7 @@ class Life:
        for i in range(1, self.cols - 1):
            for j in range(1, self.rows - 1):
                status = self.board[i][j].status
+               assert type(status)==int 
 
                for m in range(i - 1, i + 2):
                    for n in range(j - 1, j + 2):
@@ -155,12 +157,16 @@ class Life:
 
     def run_conway(self, rounds, shown):
         gen = 1
+        assert type(rounds)==int 
+        assert type(shown)==int 
         while rounds > 0:
             self.population = 0
             self.play_round_Conway_Cell()
             self.update_board()
 
             if gen % shown == 0:
+              assert type(self.population)==int 
+              assert type(gen)==int 
               print("Generation = ",gen , "Population = ", self.population)
               self.show_board()
               print()
@@ -169,6 +175,8 @@ class Life:
 
     def run_fredkin(self, rounds, shown):
         gen = 1
+        assert type(rounds)==int 
+        assert type(shown)==int 
         while rounds > 0:
             self.population = 0
             self.play_round_Fredkin_Cell()
@@ -194,6 +202,7 @@ class Life:
             for f in x:
                 if f.status == 0:
                     if f.name == "conway":
+                        assert type(self.population)==int
                         if f.live_neighbors == 3:
                             f.symbol ="*"
                             f.status = 1
@@ -208,6 +217,8 @@ class Life:
 
                 elif f.status == 1:
                     if f.name == "conway":
+                        assert type(self.population)==int
+                        #assert type(f.status)== 1
                         if not((f.live_neighbors == 2 or f.live_neighbors == 3)):
                             f.symbol = "."
                             f.status = 0

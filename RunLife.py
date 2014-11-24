@@ -64,9 +64,9 @@ Print the 2500th grid.
 game.read_board()
 
 game.run_conway(10,1)
-game.run_conway(283,283)
-game.run_conway(323,323)
-game.run_conway(2500,2500)
+# game.run_conway(283,283)
+# game.run_conway(323,323)
+# game.run_conway(2500,2500)
 
 # ----------------------
 # Life Fredkin_Cell 20x20
